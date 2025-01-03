@@ -1,0 +1,18 @@
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; 
+}
+.box {
+    width: 300px;
+    height: 180px;
+    background-color: rgb(102, 118, 123);  
+}
+.box {
+    color: white;
+    text-align: center;
+}
+
+    
