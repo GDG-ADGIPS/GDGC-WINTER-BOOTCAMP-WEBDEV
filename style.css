@@ -1,0 +1,40 @@
+
+.header {background-color: black;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.header ul{
+    list-style-type: none;
+    display: flex;
+    gap: 20px;
+    border: 2px solid white;
+    padding: 10px;
+   
+}
+
+.header button{
+    background-color: white;
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+body{
+    margin: 0px;
+}
+.menu {
+    display: none;
+    
+  }
+@media (max-width: 1000px) {
+ .menu{
+    display: inline;
+ }
+ .header ul{
+    display: none;
+}
+
+}  
