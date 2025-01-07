@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Api fetching</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            
+        }
+        div{
+            border: 2px solid #0b0c0c;
+            text-align: center;
+            padding: 10px ;
+        }
+        button{
+            margin-bottom: 10px;
+            padding: 10px 20px;
+            font-size: 20px;
+            cursor: pointer;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+        button:hover{
+            background-color: #0056b3;
+        }
+        p{
+            font-size: 20px;
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+        h1{
+            border:double;
+        }
+    </style>
+
+</head>
+<body>
+    <div>
+        <h1>Kanye Quote</h1>
+        <p>click button to get inspired by kanye!</p>
+        <button>Get Quote</button>
+    </div>
+
+    <script>
+        const button = document.querySelector('button');
+        const quote = document.querySelector('p');
+        button.addEventListener('click',()=>{
+            fetch('https://api.kanye.rest')
+            .then(response => response.json())
+            .then(data => {
+                quote.textContent = data.quote;
+            })
+        })
+    </script>
+</body>
+</html>
