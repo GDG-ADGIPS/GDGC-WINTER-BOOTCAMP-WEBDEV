@@ -1,0 +1,21 @@
+.nav_bar{
+    display: flex;
+    justify-content: space-evenly;
+    min-width: 500px;
+    background-color: black;
+    padding: 30px;
+    font-size: 20px;
+} 
+/* #signup{
+    background-color: skyblue;
+    align-items: right;
+} */
+
+.nav_bar a{
+    text-decoration: none;
+}
+.nav_bar{
+    background-color: black;
+    padding: 30px;
+    font-size: 20px;
+}
