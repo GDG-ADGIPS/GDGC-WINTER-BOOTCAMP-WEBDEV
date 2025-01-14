@@ -1,0 +1,73 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f92323;
+    background-image: url("https://stock.adobe.com/in/video/geometric-shapes-form-a-wave-abstract-motion-two-color-3d-rendering-4k-resolution/717697824");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    background-color: #ff010100;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.468);
+    text-align: center;
+    width: 300px;
+}
+p{
+    color: #ffffff;
+}
+
+  h1 {
+    color: #00ffff;
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 10px;
+    color: #0000007d;
+}
+
+input[type="number"] {
+    padding: 10px;
+    border: 1px solid #00fff7;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+
+.btn {
+    padding: 10px;
+    background-color: #00f2ff;
+    color: #000000;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.btn:hover {
+    background-color: #0a81ff;
+}
+
+.result {
+    margin-top: 20px;
+    font-size: 18px;
+    color: #ffffff;
+}
