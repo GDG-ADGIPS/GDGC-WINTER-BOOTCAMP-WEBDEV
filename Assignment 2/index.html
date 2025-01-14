@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+    <link rel="icon" type="images.png" href="images/Untitled.png">
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="card">
+      <div class="search">
+        <input type="text" placeholder="enter city name" spellcheck="false" />
+        <button><img src="images/search.png" /></button>
+      </div>
+      <div class="error">
+        <p>Invalid city name</p>
+      </div>
+      <div class="weather">
+        <img src="images/rain.png" class="weather-icon" />
+        <h1 class="temp">45°C</h1>
+        <h2 class="city">Delhi</h2>
+        <div class="details">
+          <div class="col">
+            <img src="images/humidity.png" />
+            <div>
+              <p class="humidity">40%</p>
+              <p>Humidity</p>
+            </div>
+          </div>
+          <div class="col">
+            <img src="images/wind.png" />
+            <div>
+              <p class="wind">15 km/h</p>
+              <p>Wind Speed</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const apiKey = "f174efd51a8b8fc4e915113620ba33d6";
+      const apiUrl =
+        "https://api.openweathermap.org/data/2.5/weather?units=metric&q=";
+
+      const searchBox = document.querySelector(".search input");
+      const searchBtn = document.querySelector(".search button");
+      const weatherIcon = document.querySelector(".weather-icon");
+
+      async function checkwheather(city) {
+        const response = await fetch(apiUrl + city + `&appid=${apiKey}`);
+        if (response.status == 404) {
+          document.querySelector(".error").style.display = "block";
+          document.querySelector(".weather").style.display = "none";
+        } else {
+          document.querySelector(".error").style.display = "none";
+        }
+        const data = await response.json();
+        console.log(data);
+
+        document.querySelector(".temp").innerHTML =
+          Math.round(data.main.temp) + "°C";
+        document.querySelector(".city").innerHTML = data.name;
+        document.querySelector(".humidity").innerHTML =
+          data.main.humidity + "%";
+        document.querySelector(".wind").innerHTML =
+          Math.round(data.wind.speed) + "  km/h";
+
+        if (data.weather[0].main == "Clear") {
+          weatherIcon.src = "images/clear.png";
+        } else if (data.weather[0].main == "Clouds") {
+          weatherIcon.src = "images/clouds.png";
+        } else if (data.weather[0].main == "Drizzle") {
+          weatherIcon.src = "images/drizzle.png";
+        } else if (data.weather[0].main == "Mist") {
+          weatherIcon.src = "images/mist.png";
+        } else if (data.weather[0].main == "Rain") {
+          weatherIcon.src = "images/rain.png";
+        } else if (data.weather[0].main == "Snow") {
+          weatherIcon.src = "images/snow.png";
+        } else if (data.weather[0].main == "Haze") {
+          weatherIcon.src = "images/haze.png";
+        }
+
+        document.querySelector(".weather").style.display = "block";
+      }
+      
+      searchBox.addEventListener("keypress", (e) => {
+        if (e.key === "Enter") {
+            checkwheather(searchBox.value)
+        }
+      });
+      searchBtn.addEventListener("click", () => {
+        checkwheather(searchBox.value);
+      });
+      
+      //        ENTER KARNE PE BHI CHALNA CHIYE
+    </script>
+  </body>
+</html>
