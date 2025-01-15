@@ -1,0 +1,30 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'montserrat';
+    color: #fff;
+}
+html,body{
+    height: 100%;
+    width: 100%;
+}
+nav{
+    height: 145px;
+    width: 100%;
+    background-color: rgb(10, 180, 52);
+    display: flex;
+    padding: 0 150px;
+    gap: 50px;
+    position: fixed;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+nav a{
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 1.2rem;
+    text-decoration: none;
+    color: #fff;
+}
